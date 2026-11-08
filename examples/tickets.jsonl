@@ -1,1 +1,6 @@
-# placeholder
+{"id": 1, "subject": "Charged twice for my subscription", "body": "Hi, I was charged twice this month on my invoice. Please refund the extra payment."}
+{"id": 2, "subject": "App crashes on startup", "body": "The app crashes every time I open it since the latest update. This is urgent, I cannot work."}
+{"id": 3, "subject": "Cannot log in to my account", "body": "I forgot my password and the reset email never arrives. I cannot access my profile."}
+{"id": 4, "subject": "Slow dashboard loading", "body": "The dashboard is very slow and sometimes shows an error when I refresh the page."}
+{"id": 5, "subject": "Question about pricing", "body": "What is the price difference between the monthly and yearly plan?"}
+{"id": 6, "subject": "Just saying thanks", "body": "Love the product, keep up the good work!"}
