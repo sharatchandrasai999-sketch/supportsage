@@ -22,7 +22,8 @@ def build_parser():
 
 def run_triage(input_path, output_path):
     try:
-        infile = open(input_path, encoding="utf-8")
+        with open(input_path, encoding="utf-8") as infile:
+            lines = infile.readlines()
     except FileNotFoundError:
         print(f"error: input file not found: {input_path}", file=sys.stderr)
         return 2
@@ -30,8 +31,8 @@ def run_triage(input_path, output_path):
     categories = Counter()
     priorities = Counter()
     total = 0
-    with infile, open(output_path, "w", encoding="utf-8") as outfile:
-        for line in infile:
+    with open(output_path, "w", encoding="utf-8") as outfile:
+        for line in lines:
             line = line.strip()
             if not line:
                 continue
