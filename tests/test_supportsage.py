@@ -5,8 +5,6 @@ import subprocess
 import sys
 from pathlib import Path
 
-import pytest
-
 from supportsage.triage import classify, draft_reply, priority_for, triage_ticket
 
 EXAMPLES = Path(__file__).resolve().parents[1] / "examples" / "tickets.jsonl"
@@ -65,6 +63,7 @@ def test_cli_end_to_end_on_sample_file(tmp_path):
     result = subprocess.run(
         [sys.executable, "-m", "supportsage", "triage", str(EXAMPLES), "--out", str(out)],
         capture_output=True,
+        check=False,
         text=True,
     )
     assert result.returncode == 0, result.stderr
@@ -89,6 +88,7 @@ def test_cli_missing_input_file_errors_cleanly(tmp_path):
             str(tmp_path / "out.jsonl"),
         ],
         capture_output=True,
+        check=False,
         text=True,
     )
     assert result.returncode != 0
